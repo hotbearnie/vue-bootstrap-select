@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Vue bootstrap select</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="js/vue.js">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-select.js"></script>
+    <script src="js/defaults-zh_CN.js"></script>
+    <style>
+        #app {
+            padding-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="row">
+            <div class="col-md-6 col-md-push-3">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label for="test" class="col-lg-2 control-label">"Basic" (liveSearch enabled)</label>
+
+                        <div class="col-lg-10">
+                            <v-select id="test" @changed="handleChange"  :options="selectOption" data-style="btn-primary" class="show-tick form-control show-menu-arrow">
+                                <option v-for="(item,index) in optionList"  data-subtext="item.discription" v-text="item.name"></option>
+                            </v-select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <script data-main="js/main" src="js/require.js"></script>
+</body>
+</html>
